@@ -1,0 +1,13 @@
+#zh strings go here for Rails i18n
+zh:
+  label_feedbacks: "评价反馈"
+  label_feedback_new: "添加反馈"
+  label_feedback_my: "给我的反馈"
+  label_all_feedback: "全部反馈"
+  feedback_field_day: "反馈时间"
+  feedback_field_author: "反馈者"
+  field_score: "评价分数"
+  field_tags: "关键词"
+  feedback_index_item_score: "评价"
+  feedback_index_item_good: "做的好的地方"
+  feedback_index_item_nogood: "需要改进的地方"

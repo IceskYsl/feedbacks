@@ -1,0 +1,34 @@
+<%= error_messages_for @feedback %>
+
+<div class="box tabular"> 
+<p>
+	<label><%= l(:feedback_field_day) %></label>
+	<span class="required"> *</span>
+	  <%=@day%>
+</p>
+<p>
+	<label><%= l(:feedback_field_author) %></label>
+	<span class="required"> *</span>
+	  <%= User.current.name%>
+</p>
+
+ 
+<p><%= f.select(:user_id, @users.collect { |s| [s.name, s.id]}, {:class=>'wiki-edit',:required => true}, :onchange=>"hiddenScore(this.value)")%> </p>
+</div>
+
+
+
+<div class="box tabular" id="day"> 
+	<fieldset>
+		<legend>反馈</legend>
+		<p><%= f.select(:score, Feedback.score_collection, {:class=>'wiki-edit',:required => true})%> </p>
+		<p><%= f.text_field :tags, :required => true, :size => 80 %></p>
+		<p><%= f.text_area :good, :required => false, :cols => 40, :rows => 5, :class => 'wiki-edit',:required => true %></p>
+		<p><%= f.text_area :nogood, :required => false, :cols => 40, :rows => 5, :class => 'wiki-edit',:required => true %></p>
+	</fieldset>
+</div>
+
+ 
+
+<%= wikitoolbar_for 'feedback_good' %>
+
